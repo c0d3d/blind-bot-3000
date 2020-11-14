@@ -22,6 +22,9 @@ int get_gmt_offset()
 int main()
 {
     struct tm time_date;
+    // TODO arguments (angle from north -deg west)
+    int north_azm_rotation;
+
     spa_data spa_args;
 
     time_t now = time(NULL);
@@ -38,6 +41,8 @@ int main()
     spa_args.delta_t = DELTA_T; // See ser7.dat
 
     spa_args.timezone = (double)get_gmt_offset();
+
+    spa_args.azm_rotation = (north_azm_rotation + 180) % 360;
 
 
     return 0;
