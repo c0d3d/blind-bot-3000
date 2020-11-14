@@ -13,8 +13,8 @@ int get_gmt_offset()
     struct tm time_local;
     struct tm time_gmt;
 
-    localtime_r(epoch_plus_11h, &time_local);
-    gmtime_r(epoch_plus_11h, &time_gmt);
+    localtime_r(&epoch_plus_11h, &time_local);
+    gmtime_r(&epoch_plus_11h, &time_gmt);
 
     return time_local.tm_hour - time_gmt.tm_hour;
 }
@@ -33,7 +33,7 @@ int main()
     spa_args.day    = time_date.tm_mday;
     spa_args.hour   = time_date.tm_hour;
     spa_args.minute = time_date.tm_min;
-    spa_args.second = time_date.tm_second;
+    spa_args.second = time_date.tm_sec;
 
     spa_args.delta_t = DELTA_T; // See ser7.dat
 
