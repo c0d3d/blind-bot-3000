@@ -1,10 +1,11 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
 #include <ctype.h>
-#include <unistd.h>
-#include <error.h>
 #include <errno.h>
+#include <error.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "spa.h"
 
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
     int spa_result = 0;
 
     spa_data spa_args;
+    memset(&spa_args, 0, sizeof spa_args);
 
     time_t now = time(NULL);
 
