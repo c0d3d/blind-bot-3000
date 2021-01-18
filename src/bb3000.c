@@ -61,6 +61,8 @@ int main(int argc, char *argv[])
 
     parse_args(&bb_args, argc, argv);
 
+    printf("Timezone: %d:%d:%d\n", spa_args.hour, spa_args.minute, spa_args.second);
+
     spa_args.longitude = bb_args.longitude;
     spa_args.latitude = bb_args.latitude;
     spa_args.elevation = bb_args.elevation;
@@ -77,6 +79,8 @@ int main(int argc, char *argv[])
     }
     else
     {
+        // Zenith is angle from the ground.
+        // Azimuth is the angle from north.
         printf("Zenith: %f\nAzimuth: %f\n", spa_args.zenith, spa_args.azimuth);
     }
 
@@ -217,7 +221,7 @@ static void usage(int exit_code, const char *name)
         "    [-p <pressure>] [-t <temperature>] [-s <slope>] [-h]\n"
         "Options:\n"
         "\t-a <rotation>   \tDirection facing. North is 0 degrees, positive is east.\n"
-        "\t-y <latitude>   \tLatitude of observer\n"
+        "\t-u <latitude>   \tLatitude of observer\n"
         "\t-g <longitude>  \tLongitude of observer\n"
         "\t-e <elevation>  \tElevation of observer in meters\n"
         "\t-p <pressure>   \tAtmospheric pressure in millibars\n"

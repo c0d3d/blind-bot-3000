@@ -10,7 +10,7 @@
 #include <stdint.h>
 
 #define PROGMEM
-#define pgm_read_dword(ptr) (*((uint64_t *) (ptr)))
+#define pgm_read_dword(ptr) (*((uint32_t *) (ptr)))
 #define pgm_read_byte(ptr) (*((uint8_t *) (ptr)))
 
 #endif
