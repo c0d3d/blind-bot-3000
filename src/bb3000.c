@@ -61,8 +61,6 @@ int main(int argc, char *argv[])
 
     parse_args(&bb_args, argc, argv);
 
-    printf("Timezone: %d:%d:%d\n", spa_args.hour, spa_args.minute, spa_args.second);
-
     spa_args.longitude = bb_args.longitude;
     spa_args.latitude = bb_args.latitude;
     spa_args.elevation = bb_args.elevation;
